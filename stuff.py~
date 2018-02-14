@@ -1,0 +1,13 @@
+from pymongo import MongoClient
+
+c = MongoClient('lisa.stuy.edu')
+
+db = c.test
+
+coll = db.restaurants
+
+def find_by_borough(bor):
+    return coll.find_one({'borough':bor})
+
+    
+print(find_by_borough('Brooklyn'))
