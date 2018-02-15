@@ -1,10 +1,20 @@
+'''
+Team mongJesus
+
+Vivien Lee
+Brian Leung
+
+SoftDev PD 7
+'''
 from pymongo import MongoClient
 
 c = MongoClient('lisa.stuy.edu')
-
 db = c.test
-
 coll = db.restaurants
+
+def cprint(curse):
+    for item in curse:
+        print item	
 
 def find_by_borough(bor):
     return coll.find({'borough':bor})
@@ -22,8 +32,7 @@ def find_by_zipscore(zip, scr):
     scre = str(scr)
     return coll.find( { "$and": [ {'address.zipcode':st}, {'score': {"$lt": scre}}]})
 
-
-print(find_by_borough('Brooklyn'))
-print(find_by_zip(10282))
-print(find_by_zipgrade(10282,"a"))
-print(find_by_zipgrade(10282,10))
+cprint(find_by_borough('Brooklyn'))
+cprint(find_by_zip(10282))
+cprint(find_by_zipgrade(10282,"a"))
+cprint(find_by_zipgrade(10282,10))
