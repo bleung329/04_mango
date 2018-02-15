@@ -1,3 +1,11 @@
+'''
+Team mongJesus
+
+Vivien Lee
+Brian Leung
+
+SoftDev PD 7
+'''
 from pymongo import MongoClient
 from bson import json_util
 import urllib2

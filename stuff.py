@@ -8,6 +8,7 @@ SoftDev PD 7
 '''
 from pymongo import MongoClient
 
+#SETUP
 c = MongoClient('lisa.stuy.edu')
 db = c.test
 coll = db.restaurants
