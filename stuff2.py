@@ -36,7 +36,7 @@ def cprint(curse):
     if type(curse) == None:
         print "Nothing"
     for item in curse:
-        print item 
+        print item
 
 
 def find_by_borough(bor):
@@ -62,7 +62,8 @@ cprint(find_by_zipgrade(10282,"a"))
 cprint(find_by_zipgrade(10282,10))
 '''
 
-def find_by_rating(rat):
-    return collie.find({'data.0.rating':rat})
-
-cprint(find_by_rating('g'))
+def find_by_source(rat):
+    for var in range(3,5):
+        cprint(collie.find({'data.' + str(var) + '.source_tld':rat}))
+        print "looked: "+ str(var)
+cprint(find_by_source('www.reddit.com'))
