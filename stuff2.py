@@ -24,6 +24,8 @@ response = json_util.loads(data2.read())
 collie.insert_one(response)
 
 def cprint(curse):
+    if type(curse) == None:
+        print "Nothing"
     for item in curse:
         print item 
 
