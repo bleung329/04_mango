@@ -6,6 +6,15 @@ Brian Leung
 
 SoftDev PD 7
 '''
+
+'''
+Our dataset contains information on various cat GIFs found from the GIPHY API.
+
+http://api.giphy.com/v1/gifs/search?q=cats&api_key=dc6zaTOxFJmzC
+
+We imported the JSON file into our script by using bson, a library that comes with pymongo.
+'''
+
 from pymongo import MongoClient
 from bson import json_util
 import urllib2
